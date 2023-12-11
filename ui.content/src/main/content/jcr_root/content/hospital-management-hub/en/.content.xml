@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="cq:Page">
+    <jcr:content
+            cq:allowedTemplates="[/conf/hospital-management-hub/settings/wcm/templates/landing-page,/conf/hospital-management-hub/settings/wcm/templates/content-page,/conf/hospital-management-hub/settings/wcm/templates/home-page]"
+            cq:template="/conf/hospital-management-hub/settings/wcm/templates/language-page"
+            cq:deviceGroups="[/etc/mobile/groups/responsive]"
+            jcr:primaryType="cq:PageContent"
+            jcr:title="English"
+            sling:redirect="{Boolean}true"
+            sling:redirectStatus="{Long}302"
+            sling:resourceType="hospital-management-hub/components/structure/language"
+            cq:redirectTarget="/content/hospital-management-hub/demo/en/component-library">
+    </jcr:content>
+    <en/>
+    <fr/>
+</jcr:root>
