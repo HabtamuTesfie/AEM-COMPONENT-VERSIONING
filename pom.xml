@@ -19,17 +19,19 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.sample.aem</groupId>
-    <artifactId>hospital-management-hub</artifactId>
+    <artifactId>aem-component-versioning</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <description>hospital-management-hub</description>
+    <description>aem-component-versioning</description>
 
     <modules>
         <module>core</module>
-        <module>ui.apps</module>
+        <module>ui.frontend</module>
+        <module>ui.frontend2</module>
         <module>ui.content</module>
         <module>it.tests</module>
         <module>it.launcher</module>
+        <module>ui.apps</module>
     </modules>
 
     <properties>

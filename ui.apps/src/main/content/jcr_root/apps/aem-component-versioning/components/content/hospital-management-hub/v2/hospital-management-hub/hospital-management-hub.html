@@ -1,0 +1,24 @@
+<sly data-sly-use.model="com.sample.aem.core.models.HospitalManagementHub">
+  <sly data-sly-test="${!wcmmode.edit}">
+    <h1 style="align-content: center; text-align: center; background: cadetblue; color: black; width: 100%">
+        ${model.title} USING <strong style="color: crimson">REACT</strong>
+    </h1>
+  </sly>
+  <div style="margin-left: 75px;">
+    <sly data-sly-use.version="com.sample.aem.core.models.VersionManager">
+      <sly data-sly-test="${wcmmode.edit}">
+        <h3>${model.title}</h3>
+        <sly>${version.changeResourceType}</sly>
+          <br/>
+          <h3>Edit hospital management app(v2) (seeing this because you are an author)</h3>
+          <h4>Note*: Please publish the page to see the authored content.</h4>
+          <br/>
+      </sly>
+      <sly data-sly-test="${!wcmmode.edit}">
+        <div id="root"></div>
+      </sly>
+    </sly>
+  </div>
+</sly>
+
+

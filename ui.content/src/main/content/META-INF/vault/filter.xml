@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
-    <filter root="/conf/hospital-management-hub" mode="merge"/>
-    <filter root="/content/hospital-management-hub" mode="merge"/>
-    <filter root="/content/dam/aem-editable-templates-demo" mode="merge"/>
+    <filter root="/conf/aem-component-versioning" mode="merge"/>
+    <filter root="/content/aem-component-versioning" mode="merge"/>
 </workspaceFilter>

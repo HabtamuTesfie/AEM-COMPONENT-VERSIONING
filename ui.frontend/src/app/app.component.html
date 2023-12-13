@@ -1,1 +1,51 @@
-<router-outlet></router-outlet>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form>
+        <h2 class="text-center">Patient Information</h2>
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <select id="gender" name="gender" class="form-control" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="dob" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+          <label for="contactNumber">Contact Number</label>
+          <input type="tel" id="contactNumber" name="contactNumber" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Address</label>
+          <textarea id="address" name="address" class="form-control" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="emergencyContact">Emergency Contact</label>
+          <input type="text" id="emergencyContact" name="emergencyContact" class="form-control" required>
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

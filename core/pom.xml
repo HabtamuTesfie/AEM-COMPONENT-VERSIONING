@@ -19,14 +19,14 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.sample.aem</groupId>
-        <artifactId>hospital-management-hub</artifactId>
+        <artifactId>aem-component-versioning</artifactId>
         <version>1.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <artifactId>hospital-management-hub.core</artifactId>
+    <artifactId>aem-component-versioning.core</artifactId>
     <packaging>bundle</packaging>
-    <name>hospital-management-hub- Core</name>
-    <description>Core bundle for hospital-management-hub</description>
+    <name>aem-component-versioning- Core</name>
+    <description>Core bundle for aem-component-versioning</description>
     <build>
         <plugins>
             <plugin>
@@ -82,6 +82,11 @@
                         <groupId>org.apache.felix</groupId>
                         <artifactId>org.apache.felix.scr.bnd</artifactId>
                         <version>1.9.0</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.apache.commons</groupId>
+                        <artifactId>commons-imaging</artifactId>
+                        <version>1.0-alpha1</version>
                     </dependency>
                     <dependency>
                         <groupId>org.apache.sling</groupId>
@@ -163,7 +168,14 @@
         <dependency>
             <groupId>io.wcm</groupId>
             <artifactId>io.wcm.testing.aem-mock.junit5</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.commons</groupId>
+                    <artifactId>commons-imaging</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
+
         <dependency>
             <groupId>uk.org.lidalia</groupId>
             <artifactId>slf4j-test</artifactId>

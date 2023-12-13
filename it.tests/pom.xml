@@ -22,7 +22,7 @@
     <!-- ====================================================================== -->
     <parent>
         <groupId>com.sample.aem</groupId>
-        <artifactId>hospital-management-hub</artifactId>
+        <artifactId>aem-component-versioning</artifactId>
         <version>1.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
@@ -30,10 +30,10 @@
     <!-- ====================================================================== -->
     <!-- P R O J E C T  D E S C R I P T I O N                                   -->
     <!-- ====================================================================== -->
-    <artifactId>hospital-management-hub.it.tests</artifactId>
+    <artifactId>aem-component-versioning.it.tests</artifactId>
     <packaging>bundle</packaging>
-    <name>hospital-management-hub- Integration Tests Bundles</name>
-    <description>Bundles for Integration Tests for hospital-management-hub</description>
+    <name>aem-component-versioning- Integration Tests Bundles</name>
+    <description>Bundles for Integration Tests for aem-component-versioning</description>
 
     <!-- <scm>
         <connection></connection>
@@ -113,7 +113,7 @@
 
         <dependency>
             <groupId>com.sample.aem</groupId>
-            <artifactId>hospital-management-hub.core</artifactId>
+            <artifactId>aem-component-versioning.core</artifactId>
             <version>1.0-SNAPSHOT</version>
             <type>bundle</type>
             <scope>provided</scope>

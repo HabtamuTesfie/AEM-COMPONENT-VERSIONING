@@ -1,11 +1,18 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "b68b4b03-6037-4c6c-a4a3-ba7693170ec7"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-app": {
+    "ui.frontend": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -18,100 +25,65 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": false,
             "assets": [
-              "src/assets",
               "src/favicon.ico",
-              "src/logo192.png",
-              "src/logo512.png",
-              "src/manifest.json"
+              "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
           },
           "configurations": {
-            "aem-develop": {
-              "deployUrl": "/etc.clientlibs/aemdemo/clientlibs/clientlib-angular/resources/"
-            },
-            "serverless": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
-              "outputPath": "actions/webapp",
-              "optimization": false,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
-                }
-              ]
-            },
             "production": {
-              "deployUrl": "/etc.clientlibs/aemdemo/clientlibs/clientlib-angular/resources/",
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
-                }
-              ]
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
             }
-          }
+          },
+          "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "angular-app:build"
-          },
           "configurations": {
             "production": {
-              "browserTarget": "angular-app:build:production"
+              "browserTarget": "ui.frontend:build:production"
+            },
+            "development": {
+              "browserTarget": "ui.frontend:build:development"
             }
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-app:build"
+            "browserTarget": "ui.frontend:build"
           }
         },
         "test": {
@@ -122,35 +94,17 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
-              "src/assets",
               "src/favicon.ico",
-              "src/logo192.png",
-              "src/logo512.png",
-              "src/manifest.json"
+              "src/assets"
             ],
             "styles": [
               "src/styles.css"
             ],
             "scripts": []
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
         }
       }
     }
   },
-  "defaultProject": "angular-app",
-  "cli": {
-    "analytics": "39eb03e1-e844-4879-9bf3-1a400fcabb3e"
-  }
+  "defaultProject": "ui.frontend"
 }

@@ -19,7 +19,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.sample.aem</groupId>
-        <artifactId>hospital-management-hub</artifactId>
+        <artifactId>aem-component-versioning</artifactId>
         <version>1.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
@@ -27,10 +27,10 @@
     <!-- ====================================================================== -->
     <!-- P R O J E C T  D E S C R I P T I O N                                   -->
     <!-- ====================================================================== -->
-    <artifactId>hospital-management-hub.it.launcher</artifactId>
+    <artifactId>aem-component-versioning.it.launcher</artifactId>
     <packaging>jar</packaging>
-    <name>hospital-management-hub- Integration Tests Launcher</name>
-    <description>Integration Tests Launcher for hospital-management-hub</description>
+    <name>aem-component-versioning- Integration Tests Launcher</name>
+    <description>Integration Tests Launcher for aem-component-versioning</description>
 
     <!-- <scm>
         <connection></connection>
@@ -230,8 +230,8 @@
                                 -->
                                 <sling.additional.bundle.1>org.apache.sling.junit.core</sling.additional.bundle.1>
                                 <sling.additional.bundle.2>org.apache.sling.junit.scriptable</sling.additional.bundle.2>
-                                <sling.additional.bundle.3>hospital-management-hub.it.tests</sling.additional.bundle.3>
-                                <sling.additional.bundle.4>hospital-management-hub.core</sling.additional.bundle.4>
+                                <sling.additional.bundle.3>aem-component-versioning.it.tests</sling.additional.bundle.3>
+                                <sling.additional.bundle.4>aem-component-versioning.core</sling.additional.bundle.4>
                                 <sling.additional.bundle.5>org.apache.sling.junit.remote</sling.additional.bundle.5>
                                 <sling.additional.bundle.6>org.apache.sling.testing.tools</sling.additional.bundle.6>
                             </systemPropertyVariables>

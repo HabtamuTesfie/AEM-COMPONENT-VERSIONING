@@ -22,7 +22,7 @@
     <!-- ====================================================================== -->
     <parent>
         <groupId>com.sample.aem</groupId>
-        <artifactId>hospital-management-hub</artifactId>
+        <artifactId>aem-component-versioning</artifactId>
         <version>1.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
@@ -30,10 +30,10 @@
     <!-- ====================================================================== -->
     <!-- P R O J E C T  D E S C R I P T I O N                                   -->
     <!-- ====================================================================== -->
-    <artifactId>hospital-management-hub.ui.apps</artifactId>
+    <artifactId>aem-component-versioning.ui.apps</artifactId>
     <packaging>content-package</packaging>
-    <name>hospital-management-hub- UI apps</name>
-    <description>UI apps package for hospital-management-hub</description>
+    <name>aem-component-versioning- UI apps</name>
+    <description>UI apps package for aem-component-versioning</description>
 
     <!-- <scm>
         <connection></connection>
@@ -56,12 +56,12 @@
                 <artifactId>filevault-package-maven-plugin</artifactId>
                 <extensions>true</extensions>
                 <configuration>
-                    <group>hospital-management-hub</group>
+                    <group>aem-component-versioning</group>
                     <embeddeds>
                         <embedded>
                             <groupId>com.sample.aem</groupId>
-                            <artifactId>hospital-management-hub.core</artifactId>
-                            <target>/apps/hospital-management-hub/install</target>
+                            <artifactId>aem-component-versioning.core</artifactId>
+                            <target>/apps/aem-component-versioning/install</target>
                         </embedded>
                     </embeddeds>
                     <subPackages>
@@ -96,12 +96,68 @@
     </build>
 
     <!-- ====================================================================== -->
+    <!-- P R O F I L E S                                                        -->
+    <!-- ====================================================================== -->
+    <profiles>
+        <profile>
+            <id>autoInstallPackage</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.day.jcr.vault</groupId>
+                        <artifactId>content-package-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>install-package</id>
+                                <goals>
+                                    <goal>install</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <targetURL>http://${aem.host}:${aem.port}/crx/packmgr/service.jsp</targetURL>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>autoInstallPackagePublish</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.day.jcr.vault</groupId>
+                        <artifactId>content-package-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>install-package</id>
+                                <goals>
+                                    <goal>install</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <targetURL>http://${aem.publish.host}:${aem.publish.port}/crx/packmgr/service.jsp</targetURL>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+    <!-- ====================================================================== -->
     <!-- D E P E N D E N C I E S                                                -->
     <!-- ====================================================================== -->
     <dependencies>
         <dependency>
             <groupId>com.sample.aem</groupId>
-            <artifactId>hospital-management-hub.core</artifactId>
+            <artifactId>aem-component-versioning.core</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 

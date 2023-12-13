@@ -18,13 +18,14 @@ import javax.jcr.*;
 @SuppressWarnings("squid:S00115")
 public class VersionManager
 {
-    private static final String RESOURCE_PATH = "root/responsivegrid/hospital-hub";
+    private static final String RESOURCE_PATH       = "root/responsivegrid/hospital-hub";
+    private static final String COMPONENT_PATH      = "aem-component-versioning/components/content/hospital-management-hub/";
     private static final String SLING_RESOURCE_TYPE = "sling:resourceType";
-    private static final String VERSION_NUMBER = "versionNumber";
-    private static final String VERSION_1_VALUE = "v1";
-    private static final String VERSION_2_VALUE = "v2";
-    private static final String V1_RESOURCE_TYPE = "hospital-management-hub/components/content/old-hospital-management";
-    private static final String V2_RESOURCE_TYPE = "hospital-management-hub/components/content/new-hospital-management";
+    private static final String VERSION_NUMBER      = "versionNumber";
+    private static final String VERSION_1_VALUE     = "v1";
+    private static final String VERSION_2_VALUE     = "v2";
+    private static final String V1_RESOURCE_TYPE    = COMPONENT_PATH + VERSION_1_VALUE + "/hospital-management-hub";
+    private static final String V2_RESOURCE_TYPE    = COMPONENT_PATH + VERSION_2_VALUE + "/hospital-management-hub";
 
     @Inject
     private Resource resource;
@@ -49,7 +50,7 @@ public class VersionManager
     }
 
 
-    public void changeResourceType() {
+    public String changeResourceType() {
         try {
             ModifiableValueMap properties = resource.adaptTo(ModifiableValueMap.class);
 
@@ -67,6 +68,8 @@ public class VersionManager
         } catch (PersistenceException e) {
             throw new RuntimeException(SLING_RESOURCE_TYPE + " error: Failed to persist", e);
         }
+
+        return "";
     }
 
 
