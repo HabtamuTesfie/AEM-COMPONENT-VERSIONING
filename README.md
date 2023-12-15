@@ -13,10 +13,9 @@ The main parts of the template are:
 * it.tests: Java based integration tests
 * ui.apps: contains the /apps (and /etc) parts of the project, ie JS&CSS clientlibs, components, and templates
 * ui.content: contains sample content using the components from the ui.apps
-* ui.config: contains runmode specific OSGi configs for the project
 * ui.frontend: an optional dedicated front-end build mechanism (Angular project)
 * ui.frontend2: an optional dedicated front-end build mechanism (React project)
-* ui.tests: Selenium based UI tests
+
 
 ## How to build
 
