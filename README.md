@@ -17,8 +17,6 @@ The main parts of the template are:
 * ui.frontend: an optional dedicated front-end build mechanism (Angular project)
 * ui.frontend2: an optional dedicated front-end build mechanism (React project)
 * ui.tests: Selenium based UI tests
-* all: a single content package that embeds all of the compiled modules (bundles and content packages) including any vendor dependencies
-* analyse: this module runs analysis on the project which provides additional validation for deploying into AEMaaCS
 
 ## How to build
 
