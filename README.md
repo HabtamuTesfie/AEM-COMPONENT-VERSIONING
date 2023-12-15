@@ -1,3 +1,6 @@
+# For a comprehensive guide on implementing AEM component versioning with different client libraries, please refer to the following URL: 
+# https://habtamu-tesfie-aem.blogspot.com/2023/12/implementing-aem-component-versioning.html
+
 # Sample AEM project template
 
 This is a project template for AEM-based applications. It is intended as a best-practice set of examples as well as a potential starting point to develop your own functionality.
