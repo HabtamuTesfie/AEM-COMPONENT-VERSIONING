@@ -1,0 +1,15 @@
+<sly data-sly-use.model="com.sample.aem.core.models.CustomJSONComponent">
+  <div>
+    <h2>JSON Response</h2>
+    <h3>Url: ${model.url}</h3>
+    <ul>
+      <li>First Name: ${model.response.firstName}</li>
+      <li>Last Name: ${model.response.lastName}</li>
+      <li>Middle Name: ${model.response.middleName}</li>
+      <li>Sex: ${model.response.sex}</li>
+      <li>Age: ${model.response.age}</li>
+      <li>Nationality: ${model.response.nationality}</li>
+      <li>City: ${model.response.city}</li>
+    </ul>
+  </div>
+</sly>
